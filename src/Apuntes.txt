@@ -1,3 +1,7 @@
+COMANDOS
+npx tsc example.ts (compilar)
+npx ts-node example.ts (ejecutar directamente)
+
 TypeAnotation ---> permite tipar una variable
 
 tipos de clases
