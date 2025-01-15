@@ -1,3 +1,5 @@
+import { log } from "console";
+
 //* tipado de variable
 let a: number = 2;
 
@@ -55,7 +57,7 @@ export class ProductMemoryRepository {
 }
 
 
-//* Generics
+//! Generics
 // funcion que recibe un array que retorna number
 export const getLastNumber = (numbers: number[]): number => {
     return numbers[numbers.length - 1];
@@ -76,10 +78,19 @@ export const getLasItem = <T>(items: T[]): T => {
     return items[items.length - 1];
 }
 
-// Prueba de la función GENÉRICA
-console.log(getLasItem([1, 2, 3, 4, 5]));
-console.log(getLasItem(["a", "b", "c", "d", "e"]));
+//* Prueba. Se entrega el array y utiliza la misma FUNCIÓN GENÉRICA declarada
+console.log(getLasItem([1, 2, 3, 4, 5]));               //5
+console.log(getLasItem(["a", "b", "c", "d", "e"]));     //e
 //* si le doy un array de lo que sea, funciona IGUAL
-console.log(getLasItem([[], {}, 2, 4, "e"]));
+console.log(getLasItem([[], {}, 2, 4, "e"]));           //e
 
-
+//! formas de restringir la función genérica para que sea mas consistente
+//* Sólo se indica el tipo (number) y se declara el array de number
+const result1 = getLasItem<number>([1, 2, 3, 4, 5]);
+console.log(result1);                                   //5
+//* Sólo se indica el tipo (string) y se declara el array de string
+const result2 = getLasItem<string>(["a", "b", "c", "d", "e"]);
+console.log(result2);                                   //e
+// //* Se indica el tipo (string) y se declara el array de cualquiera, MARCA ERROR / SE ROMPE en consola
+// const result3 = getLasItem<string>([[], {}, 2, 4, "e"]);
+// console.log(result3); 
