@@ -76,7 +76,10 @@ export const getLasItem = <T>(items: T[]): T => {
     return items[items.length - 1];
 }
 
-// Prueba comentando las funciones de ejemplos antes de la GENERICA
+// Prueba de la función GENÉRICA
 console.log(getLasItem([1, 2, 3, 4, 5]));
 console.log(getLasItem(["a", "b", "c", "d", "e"]));
+//* si le doy un array de lo que sea, funciona IGUAL
+console.log(getLasItem([[], {}, 2, 4, "e"]));
+
 
