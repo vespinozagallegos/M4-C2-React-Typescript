@@ -1,0 +1,12 @@
+{
+  "name": "m4-c2-react-typescript",
+  "version": "1.0.0",
+  "description": "Demo de la clase 2, Modulo 4, React &amp; Typescrip",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
