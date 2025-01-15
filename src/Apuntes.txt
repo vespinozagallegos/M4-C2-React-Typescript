@@ -1,0 +1,6 @@
+TypeAnotation ---> permite tipar una variable
+
+tipos de clases
+public ---> podemos acceder al valor desde cualquier parte del código.
+private ---> popdemos acceder únicamente desde dentro de la clase.
+protected ---> Concede el acceso desde dentro de la clase y desde las subclases que deriven de ella.
