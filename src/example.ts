@@ -43,7 +43,7 @@ console.log(arregloConvencional);
 export class ProductMemoryRepository {                                                                                  //* 3. Se crea el array de objetos(productos) según la Interfaz
     // Se tipa products para evitar error, por mas que esté tipado en el constructor. Y se tipa como privado y array
     private products: IProduct[];
-    // constructor, tiene products que es un array de objetos IProduct (de la Interfaz) //*Forma 1 products: Array<IProduct> y forma 2 (abajo)
+    // constructor, tiene products que es un array de objetos IProduct (de la Interfaz) //?Forma 1 products: Array<IProduct> y forma 2 (abajo)
     constructor(products: IProduct[]) {                                                                            //* 3. Se crea el array de objetos(productos) según la Interfaz
         // se le asigna lo que llega por parámetro "products"
         this.products = products;
@@ -72,8 +72,10 @@ export const getLastProduct = (products: IProduct[]): IProduct => {
 // para no crear otra funcion por cada tipo se ocupa:
 
 //* FUNCIÓN GENÉRICA 
-// T es un type
-// Recibe un parametro items que es un array de ese tipo y retorna ese tipo
+// T es un type 
+//La funcion recibe algo de un tipo <T>
+// Recibe un parametro items que es un array de ese tipo T[]
+// y retorna ese tipo : T
 export const getLasItem = <T>(items: T[]): T => {
     return items[items.length - 1];
 }
