@@ -10,7 +10,7 @@ const addition = (a: number, b: number): number => a + b;
 
 console.log(addition);
 
-//* tipado de Interfaces
+//* tipado de Interfaces---------------> (se pone el TIPO de dato de cada props)                                            1. se crea la matriz(interface)
 export interface IProduct {
     title: string;
     description: string;
@@ -19,7 +19,7 @@ export interface IProduct {
     active: boolean;
 }
 
-//* Tipado de objeto segun Interface IProduct
+//* Tipado de objeto segun Interface IProduct---------------> (se entrega el dato duro de la PROPS segun la Interface)      2. se Crea un objeto segun la interfaz (1)
 const newProduct: IProduct = {
     title: "Producto Nuevo",
     description: "Un producto muy bueno",
@@ -40,18 +40,18 @@ const arregloConvencional: number [] = [6, 7, 8, 9, 10];
 console.log(arregloConvencional);
 
 //* Tipado de clases
-export class ProductMemoryRepository {
-    // Se tipa products como privado
+export class ProductMemoryRepository {                                                                                  //* 3. Se crea el array de objetos(productos) según la Interfaz
+    // Se tipa products para evitar error, por mas que esté tipado en el constructor. Y se tipa como privado y array
     private products: IProduct[];
-    // constructor de la Interfaz IProduct
-    constructor(products: Array<IProduct>) {
+    // constructor, tiene products que es un array de objetos IProduct (de la Interfaz) //*Forma 1 products: Array<IProduct> y forma 2 (abajo)
+    constructor(products: IProduct[]) {                                                                            //* 3. Se crea el array de objetos(productos) según la Interfaz
         // se le asigna lo que llega por parámetro "products"
         this.products = products;
     }
-    // se asigna método de tipo public (acceso público)
+    // se asigna método de tipo public (acceso público) como es MÉTODO, es una FUNCIÓN
     // se puede tipar como: public / private / protected
     // retorna un array
-    public getProducts(): Array<IProduct> {
+    public getProducts(): IProduct[] {
         return this.products;
     }
 }
