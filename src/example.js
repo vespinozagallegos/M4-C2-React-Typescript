@@ -1,12 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getLasItem = exports.getLastProduct = exports.getLastNumber = exports.ProductMemoryRepository = void 0;
+
 //* tipado de variable
 var a = 2;
 console.log(a);
+
 //* tipado de función        tipado de los parámetros y del retorno
 var addition = function (a, b) { return a + b; };
 console.log(addition);
+
+
 //* Tipado de objeto segun Interface IProduct
 var newProduct = {
     title: "Producto Nuevo",
@@ -16,12 +20,17 @@ var newProduct = {
     active: true
 };
 console.log(newProduct);
+
+
 //* Tipado de Array
 var arregloGenerico = [1, 2, 3, 4, 5];
 console.log(arregloGenerico);
+
 //* Tipado de Array mas COMÚN
 var arregloConvencional = [6, 7, 8, 9, 10];
 console.log(arregloConvencional);
+
+
 //* Tipado de clases
 var ProductMemoryRepository = /** @class */ (function () {
     // constructor de la Interfaz IProduct
@@ -38,6 +47,8 @@ var ProductMemoryRepository = /** @class */ (function () {
     return ProductMemoryRepository;
 }());
 exports.ProductMemoryRepository = ProductMemoryRepository;
+
+
 //* Generics
 // funcion que recibe un array que retorna number
 var getLastNumber = function (numbers) {
